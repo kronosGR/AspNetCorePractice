@@ -40,3 +40,4 @@ F:\OneDrive\CLOUD\DEV\C#\AspNetCorePractice\PartyInvites\obj\Debug\net5.0\ref\Pa
 F:\OneDrive\CLOUD\DEV\C#\AspNetCorePractice\PartyInvites\obj\Debug\net5.0\PartyInvites.csproj.CopyComplete
 F:\OneDrive\CLOUD\DEV\C#\AspNetCorePractice\PartyInvites\obj\Debug\net5.0\Razor\Views\Home\RsvpForm.cshtml.g.cs
 F:\OneDrive\CLOUD\DEV\C#\AspNetCorePractice\PartyInvites\obj\Debug\net5.0\Razor\Views\Home\Thanks.cshtml.g.cs
+F:\OneDrive\CLOUD\DEV\C#\AspNetCorePractice\PartyInvites\obj\Debug\net5.0\Razor\Views\Home\ListResponses.cshtml.g.cs
