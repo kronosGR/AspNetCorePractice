@@ -1,5 +1,5 @@
 ﻿.field-validation-error {
-    color:#f00
+    color: #f00;
 }
 
 .field-validation-valid {
@@ -13,7 +13,7 @@
 
 .validation-summary-errors {
     font-weight: bold;
-    color: #ff0000;
+    color: #f00;
 }
 
 .validation-summary-valid {
