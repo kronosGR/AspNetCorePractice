@@ -36,6 +36,8 @@ namespace SportsStore
 
             services.AddScoped<IStoreRepository, EFStoreRepository>();
 
+        }
+
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -48,10 +50,8 @@ namespace SportsStore
             app.UseStaticFiles();
 
             app.UseRouting();
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapDefaultControllerRoute();
-            });
+            app.UseEndpoints(endpoints => { endpoints.MapDefaultControllerRoute(); });
         }
     }
 }
+
