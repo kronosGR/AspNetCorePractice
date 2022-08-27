@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Todo.Models;
 using Todo.Services;
 
 namespace Todo.Controllers
@@ -16,7 +17,12 @@ namespace Todo.Controllers
         public async Task<IActionResult> Index()
         {
             var items = await _todoItemService.GetIncompleteItemAsync();
-            // return View();
+            var model = new ToDoViewModel()
+            {
+                Items = items
+            };
+
+            return View(model);
         }
     }
 }
