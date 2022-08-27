@@ -1,12 +1,22 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Todo.Services;
 
 namespace Todo.Controllers
 {
     public class ToDoController : Controller
     {
-        public IActionResult Index()
+        private readonly ITodoItemService _todoItemService;
+
+        // must provide an object mathing ITodoITemService interface
+        public ToDoController(ITodoItemService todoItemService)
         {
-           // return View();
+            _todoItemService = todoItemService;
+        }
+
+        public async Task<IActionResult> Index()
+        {
+            var items = await _todoItemService.GetIncompleteItemAsync();
+            // return View();
         }
     }
 }

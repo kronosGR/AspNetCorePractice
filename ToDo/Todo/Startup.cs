@@ -1,0 +1,17 @@
+﻿using Todo.Services;
+
+namespace Todo
+{
+    public class Startup
+    {
+
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddMvc();
+
+            // use FakeTodoITemService when ITodoItemService is used
+            services.AddSingleton<ITodoItemService, FakeTodoItemService>();
+        }
+
+    }
+}
