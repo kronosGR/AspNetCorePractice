@@ -6,5 +6,7 @@ namespace Todo.Services
     {
         Task<ToDoItem[]> GetIncompleteItemAsync();
         Task<bool> AddItemAsync(ToDoItem newItem);
+
+        Task<bool> MarkDoneAsync(Guid id);
     }
 }

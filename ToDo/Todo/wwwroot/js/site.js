@@ -8,10 +8,10 @@ $(document).ready(function () {
         markCompleted(e.target);
     })
 
-    function mmarkCompleted(checkbox) {
+    function markCompleted(checkbox) {
         checkbox.disabled = true;
 
-        var now = checkbox.closest('tr');
+        var row = checkbox.closest('tr');
         $(row).addClass('done');
 
         var form = checkbox.closest('form');
