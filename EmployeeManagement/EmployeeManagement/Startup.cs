@@ -35,6 +35,18 @@ namespace EmployeeManagement
 
             app.UseRouting();
 
+            // DefaultFilesOptions defaultFilesOptions = new DefaultFilesOptions();
+            // defaultFilesOptions.DefaultFileNames.Clear();
+            // defaultFilesOptions.DefaultFileNames.Add("foo.html");
+            // app.UseDefaultFiles(); // must be above UseStaticFiles and loads default/index.html
+            // app.UseDefaultFiles(defaultFilesOptions);
+            // app.UseStaticFiles();
+
+            FileServerOptions fileServerOptions = new FileServerOptions();
+            fileServerOptions.DefaultFilesOptions.DefaultFileNames.Clear();
+            fileServerOptions.DefaultFilesOptions.DefaultFileNames.Add("foo.html");
+            app.UseFileServer();  // instead of usestaticfile and usedefaultfiles
+
             app.Use(async (context, next) =>
             {
                 logger.LogInformation("Mw1: Incoming");
@@ -42,19 +54,9 @@ namespace EmployeeManagement
                 logger.LogInformation("Mw1: outgoing");
             });
 
-
-            app.Use(async (context, next) =>
-            {
-                logger.LogInformation("Mw2: Incoming");
-                await next();
-                logger.LogInformation("Mw2: outgoing");
-            });
-
-
             app.Run(async (context) =>
             {
                 await context.Response.WriteAsync("2nd middleware");
-                logger.LogInformation("Mw3: outgoing");
             });
         }
     }
