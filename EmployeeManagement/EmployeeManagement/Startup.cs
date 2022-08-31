@@ -30,7 +30,12 @@ namespace EmployeeManagement
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                DeveloperExceptionPageOptions developerExceptionPageExtensions = new DeveloperExceptionPageOptions
+                {
+                    // show 10 lines
+                    SourceCodeLineCount = 10
+                };
+                app.UseDeveloperExceptionPage(developerExceptionPageExtensions);
             }
 
             app.UseRouting();
@@ -42,9 +47,10 @@ namespace EmployeeManagement
             // app.UseDefaultFiles(defaultFilesOptions);
             // app.UseStaticFiles();
 
-            FileServerOptions fileServerOptions = new FileServerOptions();
-            fileServerOptions.DefaultFilesOptions.DefaultFileNames.Clear();
-            fileServerOptions.DefaultFilesOptions.DefaultFileNames.Add("foo.html");
+            //FileServerOptions fileServerOptions = new FileServerOptions();
+            //fileServerOptions.DefaultFilesOptions.DefaultFileNames.Clear();
+            //fileServerOptions.DefaultFilesOptions.DefaultFileNames.Add("foo.html");
+
             app.UseFileServer();  // instead of usestaticfile and usedefaultfiles
 
             app.Use(async (context, next) =>
