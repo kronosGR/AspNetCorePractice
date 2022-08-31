@@ -21,6 +21,7 @@
       "launchBrowser": true,
       "applicationUrl": "http://localhost:5000",
       "environmentVariables": {
+        "MyKey": "test key env var",
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     }
