@@ -45,13 +45,13 @@ namespace EmployeeManagement
             // defaultFilesOptions.DefaultFileNames.Add("foo.html");
             // app.UseDefaultFiles(); // must be above UseStaticFiles and loads default/index.html
             // app.UseDefaultFiles(defaultFilesOptions);
-            // app.UseStaticFiles();
+            app.UseStaticFiles();
 
             //FileServerOptions fileServerOptions = new FileServerOptions();
             //fileServerOptions.DefaultFilesOptions.DefaultFileNames.Clear();
             //fileServerOptions.DefaultFilesOptions.DefaultFileNames.Add("foo.html");
 
-            app.UseFileServer();  // instead of usestaticfile and usedefaultfiles
+            //app.UseFileServer();  // instead of usestaticfile and usedefaultfiles
 
             app.Use(async (context, next) =>
             {
@@ -62,7 +62,7 @@ namespace EmployeeManagement
 
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("2nd middleware");
+                await context.Response.WriteAsync(env.EnvironmentName);
             });
         }
     }
