@@ -19,7 +19,7 @@ namespace EmployeeManagement.Controllers
         public ViewResult Details()
         {
             Employee model = _employeeRepository.GetEmployee(1);
-            return new View(model);
+            return View(model);
         }
     }
 }
