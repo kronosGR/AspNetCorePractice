@@ -1,15 +1,11 @@
 ﻿@model EmployeeManagement.ViewModels.HomeDetailsViewModel
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>
+@{
+    Layout = "~/Views/Home/_Layout.cshtml";
+    ViewBag.Title = "Employee";
+}
 
-    </title>
-</head>
-<body>
-<h1>
-    <h3>@Model.PageTitle</h3>
+<h3>@Model.PageTitle</h3>
     
     <div>
         Name: @Model.Employee.Name;
@@ -20,6 +16,3 @@
     <div>
         Department: @Model.Employee.Department;
     </div>
-</h1>
-</body>
-</html>
