@@ -6,8 +6,13 @@
     <title>@ViewBag.Title</title>
 </head>
 <body>
-    <div>
-        @RenderBody()
-    </div>
+<div>
+    @RenderBody()
+</div>
+@if (IsSectionDefined("Scripts"))
+{
+    @RenderSection("Scripts", true)
+}
+
 </body>
 </html>
