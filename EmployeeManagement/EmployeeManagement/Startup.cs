@@ -50,7 +50,13 @@ namespace EmployeeManagement
             app.UseStaticFiles();
 
             // use the homeController
-            app.UseMvcWithDefaultRoute();
+            //app.UseMvcWithDefaultRoute();
+            app.UseMvc(routes =>
+            {
+                // is like the above UseMvcWithDefaultRoute
+                // with default values and optional id
+                routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
+            });
 
             //FileServerOptions fileServerOptions = new FileServerOptions();
             //fileServerOptions.DefaultFilesOptions.DefaultFileNames.Clear();
