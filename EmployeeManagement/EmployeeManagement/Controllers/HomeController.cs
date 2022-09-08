@@ -2,31 +2,36 @@
 using EmployeeManagement.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
-namespace EmployeeManagement.Controllers
+namespace EmployeeManagement.Controllers;
+
+[Route("[controller]/[action]")]
+public class HomeController : Controller
 {
-    public class HomeController : Controller
+    private readonly IEmployeeRepository _employeeRepository;
+
+    public HomeController(IEmployeeRepository employeeRepository)
     {
-        private readonly IEmployeeRepository _employeeRepository;
+        _employeeRepository = employeeRepository;
+    }
 
-        public HomeController(IEmployeeRepository employeeRepository)
-        {
-            _employeeRepository = employeeRepository;
-        }
-        public ViewResult Index()
-        {
-            var model = _employeeRepository.getAllEmployees();
-            return View(model);
+    [Route("")]
+    [Route("Index")]
+    public ViewResult Index()
+    {
+        var model = _employeeRepository.getAllEmployees();
+        // if different name then have to specify the location
+        // return View("~/Views/Home/index.cshtml",model);
+        return View(model);
+    }
 
-        }
-
-        public ViewResult Details(int id)
+    [Route("{id?}")]
+    public ViewResult Details(int? id)
+    {
+        var homeDetailsViewModel = new HomeDetailsViewModel
         {
-            HomeDetailsViewModel homeDetailsViewModel = new HomeDetailsViewModel()
-            {
-                Employee = _employeeRepository.GetEmployee(id),
-                PageTitle = "Employee Details"
-            };
-            return View(homeDetailsViewModel);
-        }
+            Employee = _employeeRepository.GetEmployee(id ?? 1),
+            PageTitle = "Employee Details"
+        };
+        return View(homeDetailsViewModel);
     }
 }
