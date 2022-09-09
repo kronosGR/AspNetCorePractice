@@ -52,13 +52,13 @@ namespace EmployeeManagement
             // use the homeController
             //app.UseMvcWithDefaultRoute();
             
-            //used for attribute routing
-            // app.UseMvc(routes =>
-            // {
-            //     // is like the above UseMvcWithDefaultRoute
-            //     // with default values and optional id
-            //     routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
-            // });
+            //used for normal routing
+            app.UseMvc(routes =>
+            {
+                // is like the above UseMvcWithDefaultRoute
+                // with default values and optional id
+                routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
+            });
 
             //FileServerOptions fileServerOptions = new FileServerOptions();
             //fileServerOptions.DefaultFilesOptions.DefaultFileNames.Clear();
@@ -66,7 +66,8 @@ namespace EmployeeManagement
 
             //app.UseFileServer();  // instead of usestaticfile and usedefaultfiles
 
-            app.UseMvc();
+            // use for attribute routing
+            //app.UseMvc();
             
             app.Use(async (context, next) =>
             {
