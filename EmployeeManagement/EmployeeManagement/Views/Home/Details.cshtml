@@ -12,7 +12,8 @@
                 <h1>@Model.Employee.Name</h1>
             </div>
             <div class="card-body text-center">
-                <img class="card-img-top" src="~/images/banner.png"/>
+                @* append an image version to refresh the page when new... cache busting behaviour *@
+                <img class="card-img-top" src="~/images/banner.png" asp-append-version="true"/>
 
                 <h4>Employee ID: @Model.Employee.Id</h4>
                 <h4>Email: @Model.Employee.Email</h4>
