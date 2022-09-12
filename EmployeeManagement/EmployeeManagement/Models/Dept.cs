@@ -1,6 +1,9 @@
 namespace EmployeeManagement.Models;
 
-public class Dept
+public enum Dept
 {
-    
+    None,
+    HR,
+    IT,
+    Payroll
 }
