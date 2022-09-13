@@ -10,6 +10,7 @@
 
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNet.WebPages" Version="3.2.9" />
+        <PackageReference Include="MyTested.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.0" />
     </ItemGroup>
 
 </Project>
