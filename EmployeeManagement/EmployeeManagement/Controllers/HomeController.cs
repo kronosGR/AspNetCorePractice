@@ -15,7 +15,7 @@ public class HomeController : Controller
 
     public ViewResult Index()
     {
-        var model = _employeeRepository.getAllEmployees();
+        var model = _employeeRepository.getAllEmployee();
         // if different name then have to specify the location
         // return View("~/Views/Home/index.cshtml",model);
         return View(model);
@@ -43,7 +43,7 @@ public class HomeController : Controller
         if (ModelState.IsValid)
         {
             var newEmployee = _employeeRepository.Add(employee);
-            return RedirectToAction("Details", new { id = newEmployee.Id });
+            // return RedirectToAction("Details", new { id = newEmployee.Id });
         }
 
         return View();

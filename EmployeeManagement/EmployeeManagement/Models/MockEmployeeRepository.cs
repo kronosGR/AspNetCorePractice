@@ -22,7 +22,7 @@ public class MockEmployeeRepository : IEmployeeRepository
         return _employeeList.FirstOrDefault(e => e.Id == Id);
     }
 
-    public IEnumerable<Employee> getAllEmployees()
+    public IEnumerable<Employee> getAllEmployee()
     {
         return _employeeList;
     }
