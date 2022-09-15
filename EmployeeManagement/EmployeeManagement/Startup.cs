@@ -30,7 +30,8 @@ public class Startup
 
         services.ReplaceRazorRuntimeCompilation();
         services.AddMvc(options => options.EnableEndpointRouting = false);
-        services.AddSingleton<IEmployeeRepository, MockEmployeeRepository>();
+
+        services.AddScoped<IEmployeeRepository, SQLEmployeeRepository>();
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
