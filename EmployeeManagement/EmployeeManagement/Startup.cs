@@ -1,3 +1,4 @@
+using System;
 using EmployeeManagement.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -25,8 +26,13 @@ public class Startup
     // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
     public void ConfigureServices(IServiceCollection services)
     {
-        services.AddDbContextPool<AppDbContext>(options => options.UseMySQL(_config.GetConnectionString
-            ("EmployeeDBConnection")));
+        var connectionString = _config.GetConnectionString("EmployeeDBConnection");
+        var serverVersion = new MySqlServerVersion(new Version(8, 0, 29));
+        services.AddDbContextPool<AppDbContext>(options => options.UseMySql(connectionString, serverVersion));
+
+        // services.AddDbContextPool<AppDbContext>(options => options.UseMySQL(_config.GetConnectionString
+        //     ("EmployeeDBConnection")));
+
 
         services.ReplaceRazorRuntimeCompilation();
         services.AddMvc(options => options.EnableEndpointRouting = false);
