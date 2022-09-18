@@ -2,8 +2,8 @@
 
 @{
     ViewBag.Title = "Employee";
+    var photoPath = "/images/" + Model.Employee.PhotoPath ?? "image1.jpg";
 }
-
 
 <div class="row justify-content-center m-3">
     <div class="col-sm-8">
@@ -13,7 +13,7 @@
             </div>
             <div class="card-body text-center">
                 @* append an image version to refresh the page when new... cache busting behaviour *@
-                <img class="card-img-top" src="~/images/banner.png" asp-append-version="true"/>
+                <img class="card-img-top" src="@photoPath" asp-append-version="true"/>
 
                 <h4>Employee ID: @Model.Employee.Id</h4>
                 <h4>Email: @Model.Employee.Email</h4>

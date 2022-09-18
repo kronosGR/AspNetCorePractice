@@ -6,11 +6,12 @@
 <div class="card-deck">
     @foreach (var employee in Model)
     {
+        var photoPath = "/images/" + (employee.PhotoPath ?? "image1.png");
         <div class="card m-3">
             <div class="card-header">
                 <h3>@employee.Name</h3>
             </div>
-            <img class="card-img-top" src="~/images/image1.png"/>
+            <img class="card-img-top imageThumbnail" src="@photoPath"/>
             <div class="card-footer text-center">
                 @* Alternative ways*@
                 @* @Html.ActionLink("View", "Details", "Home", new { id = employee.Id }) *@
