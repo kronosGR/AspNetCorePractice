@@ -26,6 +26,18 @@
     dotnet ef database update
 ```
 
+*remove last migration(you cannot remove already applied migrations to DB*
+
+```
+    dotnet ef migrations remove
+```
+
+*revert to old migration to revert changes to DB*
+
+```
+    dotnet ef databse update migrationName
+```
+
 ### For mysql provider
 
 *remove previous mysql provider*
