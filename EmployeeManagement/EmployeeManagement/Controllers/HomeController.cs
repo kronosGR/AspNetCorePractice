@@ -45,6 +45,22 @@ public class HomeController : Controller
         return View();
     }
 
+    [HttpGet]
+    public ViewResult Edit(int id)
+    {
+        var employee = _employeeRepository.GetEmployee(id);
+        var employeeEditViewModel = new EmployeeEditViewModel
+        {
+            Id = employee.Id,
+            Name = employee.Name,
+            Email = employee.Email,
+            Department = employee.Department,
+            ExistingPhotoPath = employee.PhotoPath
+        };
+
+        return View(employeeEditViewModel);
+    }
+
     [HttpPost]
     public IActionResult Create(EmployeeCreateViewModel model)
     {
