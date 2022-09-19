@@ -51,13 +51,14 @@ public class HomeController : Controller
         if (ModelState.IsValid)
         {
             string uniqueFileName = null;
-            if (model.Photo != null)
-            {
-                var uploadsFolder = Path.Combine(_hostingEnvironment.WebRootPath, "images");
-                uniqueFileName = Guid.NewGuid() + "_" + model.Photo.FileName;
-                var filePath = Path.Combine(uploadsFolder, uniqueFileName);
-                model.Photo.CopyTo(new FileStream(filePath, FileMode.Create));
-            }
+            if (model.Photos != null && model.Photos.Count > 0)
+                foreach (var photo in model.Photos)
+                {
+                    var uploadsFolder = Path.Combine(_hostingEnvironment.WebRootPath, "images");
+                    uniqueFileName = Guid.NewGuid() + "_" + photo.FileName;
+                    var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+                    photo.CopyTo(new FileStream(filePath, FileMode.Create));
+                }
 
             var newEmployee = new Employee
             {
