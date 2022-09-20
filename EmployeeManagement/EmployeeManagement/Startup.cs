@@ -21,14 +21,15 @@ public class Startup
         _config = config;
     }
 
-
     // This method gets called by the runtime. Use this method to add services to the container.
     // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
     public void ConfigureServices(IServiceCollection services)
     {
         var connectionString = _config.GetConnectionString("EmployeeDBConnection");
         var serverVersion = new MySqlServerVersion(new Version(8, 0, 29));
-        services.AddDbContextPool<AppDbContext>(options => options.UseMySql(connectionString, serverVersion));
+        services.AddDbContextPool<AppDbContext>(
+            options => options.UseMySql(connectionString, serverVersion)
+        );
 
         // services.AddDbContextPool<AppDbContext>(options => options.UseMySQL(_config.GetConnectionString
         //     ("EmployeeDBConnection")));
@@ -51,6 +52,12 @@ public class Startup
                 SourceCodeLineCount = 10
             };
             app.UseDeveloperExceptionPage(developerExceptionPageExtensions);
+        }
+        else
+        {
+            // Status code 404: Not found
+            // app.UseStatusCodePages();
+            app.UseStatusCodePagesWithRedirects("/Error/{0}");
         }
 
         app.UseRouting();
@@ -82,11 +89,13 @@ public class Startup
         // use for attribute routing
         //app.UseMvc();
 
-        app.Use(async (context, next) =>
-        {
-            logger.LogInformation("Mw1: Incoming");
-            await next();
-            logger.LogInformation("Mw1: outgoing");
-        });
+        app.Use(
+            async (context, next) =>
+            {
+                logger.LogInformation("Mw1: Incoming");
+                await next();
+                logger.LogInformation("Mw1: outgoing");
+            }
+        );
     }
 }
