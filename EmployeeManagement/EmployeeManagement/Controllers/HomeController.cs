@@ -66,16 +66,7 @@ public class HomeController : Controller
     {
         if (ModelState.IsValid)
         {
-            string uniqueFileName = null;
-            if (model.Photos != null && model.Photos.Count > 0)
-                foreach (var photo in model.Photos)
-                {
-                    var uploadsFolder = Path.Combine(_hostingEnvironment.WebRootPath, "images");
-                    uniqueFileName = Guid.NewGuid() + "_" + photo.FileName;
-                    var filePath = Path.Combine(uploadsFolder, uniqueFileName);
-                    photo.CopyTo(new FileStream(filePath, FileMode.Create));
-                }
-
+            var uniqueFileName = PreocessUploadedFile(model);
             var newEmployee = new Employee
             {
                 Name = model.Name,
@@ -88,5 +79,56 @@ public class HomeController : Controller
         }
 
         return View();
+    }
+
+    [HttpPost]
+    public IActionResult Edit(EmployeeEditViewModel model)
+    {
+        if (ModelState.IsValid)
+        {
+            var employee = _employeeRepository.GetEmployee(model.Id);
+            employee.Name = model.Name;
+            employee.Email = model.Email;
+            employee.Department = model.Department;
+            if (model.Photos != null)
+            {
+                if (model.ExistingPhotoPath != null)
+                {
+                    var filePath = Path.Combine(
+                        _hostingEnvironment.WebRootPath,
+                        "images",
+                        model.ExistingPhotoPath
+                    );
+                    System.IO.File.Delete(filePath);
+                }
+
+                employee.PhotoPath = PreocessUploadedFile(model);
+            }
+
+            var uniqueFileName = PreocessUploadedFile(model);
+
+            _employeeRepository.Update(employee);
+            return RedirectToAction("Index");
+        }
+
+        return View();
+    }
+
+    private string PreocessUploadedFile(EmployeeCreateViewModel model)
+    {
+        string uniqueFileName = null;
+        if (model.Photos != null && model.Photos.Count > 0)
+            foreach (var photo in model.Photos)
+            {
+                var uploadsFolder = Path.Combine(_hostingEnvironment.WebRootPath, "images");
+                uniqueFileName = Guid.NewGuid() + "_" + photo.FileName;
+                var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+                using (var filestream = new FileStream(filePath, FileMode.Create))
+                {
+                    photo.CopyTo(filestream);
+                }
+            }
+
+        return uniqueFileName;
     }
 }
