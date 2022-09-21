@@ -57,7 +57,12 @@ public class Startup
         {
             // Status code 404: Not found
             // app.UseStatusCodePages();
-            app.UseStatusCodePagesWithRedirects("/Error/{0}");
+
+            // issues redirect
+            // app.UseStatusCodePagesWithRedirects("/Error/{0}");
+
+            // issues reexution
+            app.UseStatusCodePagesWithReExecute("/Error/{0}");
         }
 
         app.UseRouting();
