@@ -31,7 +31,7 @@ public class HomeController : Controller
 
     public ViewResult Details(int? id)
     {
-        Employee employee = _employeeRepository.GetEmployee(id.Value);
+        var employee = _employeeRepository.GetEmployee(id.Value);
         if (employee == null)
         {
             Response.StatusCode = 404;

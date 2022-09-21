@@ -62,6 +62,7 @@ public class Startup
             // app.UseStatusCodePagesWithRedirects("/Error/{0}");
 
             // issues reexution
+            app.UseExceptionHandler("/Error");
             app.UseStatusCodePagesWithReExecute("/Error/{0}");
         }
 
