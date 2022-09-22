@@ -1,11 +1,19 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace EmployeeManagement.Controllers;
 
 public class ErrorController : Controller
 {
+    private readonly ILogger<ErrorController> _logger;
+
+    public ErrorController(ILogger<ErrorController> logger)
+    {
+        _logger = logger;
+    }
+
     // GET
     [Route("Error/{statusCode}")]
     public IActionResult HttpStatusCodeHandler(int statusCode)
@@ -18,6 +26,10 @@ public class ErrorController : Controller
                 ViewBag.ErrorMessage = "Sorry the resource could not be found";
                 ViewBag.Path = statusCodeResult.OriginalPath;
                 ViewBag.QS = statusCodeResult.OriginalQueryString;
+                _logger.LogWarning(
+                    $"404 Error occured. Path = {statusCodeResult.OriginalPath}"
+                    + $" and querystring = ${statusCodeResult.OriginalQueryString}"
+                );
                 break;
         }
 
@@ -32,6 +44,10 @@ public class ErrorController : Controller
         ViewBag.ExceptionPath = exceptionDetails.Path;
         ViewBag.ExceptionMessage = exceptionDetails.Error.Message;
         ViewBag.Stacktrace = exceptionDetails.Error.StackTrace;
+
+        _logger.LogError(
+            $"The path {exceptionDetails.Path} threw an exception {exceptionDetails.Error}"
+        );
 
         return View("Error");
     }
