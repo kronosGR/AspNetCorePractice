@@ -4,6 +4,7 @@ using EmployeeManagement.Models;
 using EmployeeManagement.ViewModels;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace EmployeeManagement.Controllers;
 
@@ -11,14 +12,16 @@ public class HomeController : Controller
 {
     private readonly IEmployeeRepository _employeeRepository;
     private readonly IWebHostEnvironment _hostingEnvironment;
+    private readonly ILogger _logger;
 
     public HomeController(
         IEmployeeRepository employeeRepository,
-        IWebHostEnvironment IHostingEnvironment
+        IWebHostEnvironment IHostingEnvironment, ILogger<HomeController> logger
     )
     {
         _employeeRepository = employeeRepository;
         _hostingEnvironment = IHostingEnvironment;
+        _logger = logger;
     }
 
     public ViewResult Index()
