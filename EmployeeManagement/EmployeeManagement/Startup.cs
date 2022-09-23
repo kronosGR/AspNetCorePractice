@@ -2,6 +2,7 @@ using System;
 using EmployeeManagement.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -25,6 +26,9 @@ public class Startup
     // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
     public void ConfigureServices(IServiceCollection services)
     {
+        // Identity #2
+        services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
+        
         var connectionString = _config.GetConnectionString("EmployeeDBConnection");
         var serverVersion = new MySqlServerVersion(new Version(8, 0, 29));
         services.AddDbContextPool<AppDbContext>(
@@ -77,6 +81,9 @@ public class Startup
 
         // use the homeController
         //app.UseMvcWithDefaultRoute();
+        
+        // Identity #3
+        app.UseAuthentication();
 
         //used for normal routing
         app.UseMvc(routes =>
