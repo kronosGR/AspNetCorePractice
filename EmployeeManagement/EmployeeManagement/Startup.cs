@@ -40,6 +40,21 @@ public class Startup
 
 
         services.ReplaceRazorRuntimeCompilation();
+        
+        // customize identity password complexity
+        // services.Configure<IdentityOptions>(options =>
+        // {
+        //     options.Password.RequiredLength = 10;
+        //     options.Password.RequiredUniqueChars = 3;
+        // });
+        //
+        // or
+        services.AddIdentity<IdentityUser, IdentityRole>(options =>
+        {
+            options.Password.RequiredLength = 10;
+            options.Password.RequiredUniqueChars = 3;
+        }).AddEntityFrameworkStores<AppDbContext>();
+        
         services.AddMvc(options => options.EnableEndpointRouting = false);
 
         services.AddScoped<IEmployeeRepository, SQLEmployeeRepository>();
