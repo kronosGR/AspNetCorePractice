@@ -61,7 +61,7 @@ public class AccountController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> Login(LoginViewModel model)
+    public async Task<IActionResult> Login(LoginViewModel model, string returnUrl)
     {
         if (ModelState.IsValid)
         {
@@ -73,7 +73,11 @@ public class AccountController : Controller
             );
 
             if (result.Succeeded)
+            {
+                if (!string.IsNullOrEmpty(returnUrl))
+                    return Redirect(returnUrl);
                 return RedirectToAction("Index", "Home");
+            }
 
             ModelState.AddModelError(string.Empty, "Invalid Login Attempt");
         }
