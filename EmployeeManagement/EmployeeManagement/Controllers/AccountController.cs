@@ -74,8 +74,13 @@ public class AccountController : Controller
 
             if (result.Succeeded)
             {
-                if (!string.IsNullOrEmpty(returnUrl))
-                    return Redirect(returnUrl);
+                if (!string.IsNullOrEmpty(returnUrl)) // && Url.IsLocalUrl(returnUrl)
+                    // return Redirect(returnUrl);
+                    // to avoid redirect vulnerability
+                    return LocalRedirect(returnUrl);
+            }
+            else
+            {
                 return RedirectToAction("Index", "Home");
             }
 
