@@ -27,8 +27,10 @@ public class Startup
     public void ConfigureServices(IServiceCollection services)
     {
         // Identity #2
-        services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
-        
+        services
+            .AddIdentity<ApplicationUser, IdentityRole>()
+            .AddEntityFrameworkStores<AppDbContext>();
+
         var connectionString = _config.GetConnectionString("EmployeeDBConnection");
         var serverVersion = new MySqlServerVersion(new Version(8, 0, 29));
         services.AddDbContextPool<AppDbContext>(
@@ -40,7 +42,7 @@ public class Startup
 
 
         services.ReplaceRazorRuntimeCompilation();
-        
+
         // customize identity password complexity
         services.Configure<IdentityOptions>(options =>
         {
@@ -49,12 +51,12 @@ public class Startup
         });
         //
         // or
-        // services.AddIdentity<IdentityUser, IdentityRole>(options =>
+        // services.AddIdentity<ApplicationUser, IdentityRole>(options =>
         // {
         //     options.Password.RequiredLength = 10;
         //     options.Password.RequiredUniqueChars = 3;
         // }).AddEntityFrameworkStores<AppDbContext>();
-        
+
         services.AddMvc(options => options.EnableEndpointRouting = false);
 
         services.AddScoped<IEmployeeRepository, SQLEmployeeRepository>();
@@ -96,7 +98,7 @@ public class Startup
 
         // use the homeController
         //app.UseMvcWithDefaultRoute();
-        
+
         // Identity #3
         app.UseAuthentication();
 

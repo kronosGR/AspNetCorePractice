@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using EmployeeManagement.Models;
 using EmployeeManagement.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -7,12 +8,12 @@ namespace EmployeeManagement.Controllers;
 
 public class AccountController : Controller
 {
-    private readonly UserManager<IdentityUser> _manager;
-    private readonly SignInManager<IdentityUser> _signInManager;
+    private readonly UserManager<ApplicationUser> _manager;
+    private readonly SignInManager<ApplicationUser> _signInManager;
 
     public AccountController(
-        UserManager<IdentityUser> userManager,
-        SignInManager<IdentityUser> signInManager
+        UserManager<ApplicationUser> userManager,
+        SignInManager<ApplicationUser> signInManager
     )
     {
         _signInManager = signInManager;
@@ -50,7 +51,12 @@ public class AccountController : Controller
     {
         if (ModelState.IsValid)
         {
-            var user = new IdentityUser { UserName = model.Email, Email = model.Email };
+            var user = new ApplicationUser
+            {
+                UserName = model.Email,
+                Email = model.Email,
+                City = model.City
+            };
             var result = await _manager.CreateAsync(user, model.Password);
 
             if (result.Succeeded)
