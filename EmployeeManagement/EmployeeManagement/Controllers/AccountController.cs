@@ -33,6 +33,18 @@ public class AccountController : Controller
         return RedirectToAction("Index", "Home");
     }
 
+    // other way
+    // [AcceptVerbs("Get", "Post")]
+    [HttpPost]
+    [HttpGet]
+    public async Task<IActionResult> IsEmailInUse(string email)
+    {
+        var user = await _manager.FindByEmailAsync(email);
+        if (user == null)
+            return Json(true);
+        return Json($"Email {email} is already in use");
+    }
+
     [HttpPost]
     public async Task<IActionResult> Register(RegisterViewModel model)
     {
