@@ -28,11 +28,20 @@ public class AdministrationController : Controller
             var identityRole = new IdentityRole { Name = model.RoleName };
             var result = await _roleManager.CreateAsync(identityRole);
 
-            if (result.Succeeded) return RedirectToAction("index", "home");
+            if (result.Succeeded)
+                return RedirectToAction("ListRoles", "Administration");
 
-            foreach (var error in result.Errors) ModelState.AddModelError("", error.Description);
+            foreach (var error in result.Errors)
+                ModelState.AddModelError("", error.Description);
         }
 
         return View(model);
+    }
+
+    [HttpGet]
+    public IActionResult ListRoles()
+    {
+        var roles = _roleManager.Roles;
+        return View(roles);
     }
 }
