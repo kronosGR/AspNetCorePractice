@@ -33,5 +33,22 @@ namespace ConferenceApp.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        [HttpGet]   
+        public ViewResult RegisterForm()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ViewResult RegisterForm(WebinarInvites registrationResponse)
+        {
+            if (ModelState.IsValid)
+            {
+                Repository.AddResponse(registrationResponse);
+                return View("Thank you", registrationResponse)
+            }
+            return View();
+        }
     }
 }
