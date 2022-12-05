@@ -46,9 +46,14 @@ namespace ConferenceApp.Controllers
             if (ModelState.IsValid)
             {
                 Repository.AddResponse(registrationResponse);
-                return View("Thank you", registrationResponse)
+                return View("Thankyou", registrationResponse);
             }
             return View();
+        }
+
+        public ViewResult ListResponses()
+        {
+            return View(Repository.Responses.Where(r => r.WillJoin == true));
         }
     }
 }
