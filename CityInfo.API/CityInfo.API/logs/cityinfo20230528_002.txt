@@ -283,3 +283,56 @@ VALUES ('20230528151220_DataSeed', '6.0.0');
 2023-05-28 17:12:30.532 +02:00 [DBG] Closing connection to database 'main' on server 'E:\NextCloud\1. important\DEV\asp.net\AspNetCorePractice\CityInfo.API\CityInfo.API\CityInfo.db'.
 2023-05-28 17:12:30.532 +02:00 [DBG] Closed connection to database 'main' on server 'CityInfo.db'.
 2023-05-28 17:12:30.533 +02:00 [DBG] 'CityInfoContext' disposed.
+2023-05-28 17:21:29.368 +02:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2023-05-28 17:21:29.432 +02:00 [DBG] Hosting starting
+2023-05-28 17:21:29.482 +02:00 [DBG] Using development certificate: CN=localhost (Thumbprint: 69863A6EC5CC95D6314E21D4124A0A1C6A5B28D4)
+2023-05-28 17:21:29.503 +02:00 [INF] Now listening on: https://localhost:7201
+2023-05-28 17:21:29.503 +02:00 [INF] Now listening on: http://localhost:5078
+2023-05-28 17:21:29.504 +02:00 [DBG] Loaded hosting startup assembly CityInfo.API
+2023-05-28 17:21:29.504 +02:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2023-05-28 17:21:29.505 +02:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2023-05-28 17:21:29.505 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-28 17:21:29.506 +02:00 [INF] Hosting environment: Development
+2023-05-28 17:21:29.506 +02:00 [INF] Content root path: E:\NextCloud\1. important\DEV\asp.net\AspNetCorePractice\CityInfo.API\CityInfo.API\
+2023-05-28 17:21:29.507 +02:00 [DBG] Hosting started
+2023-05-28 17:21:29.789 +02:00 [DBG] Connection id "0HMQVHSR3MO4R" accepted.
+2023-05-28 17:21:29.789 +02:00 [DBG] Connection id "0HMQVHSR3MO4S" accepted.
+2023-05-28 17:21:29.790 +02:00 [DBG] Connection id "0HMQVHSR3MO4R" started.
+2023-05-28 17:21:29.790 +02:00 [DBG] Connection id "0HMQVHSR3MO4S" started.
+2023-05-28 17:21:29.814 +02:00 [DBG] Connection id "0HMQVHSR3MO4R" received FIN.
+2023-05-28 17:21:29.814 +02:00 [DBG] Connection id "0HMQVHSR3MO4S" received FIN.
+2023-05-28 17:21:29.820 +02:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|189_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
+   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2023-05-28 17:21:29.820 +02:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|189_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
+   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2023-05-28 17:21:29.835 +02:00 [DBG] Connection id "0HMQVHSR3MO4R" stopped.
+2023-05-28 17:21:29.835 +02:00 [DBG] Connection id "0HMQVHSR3MO4S" stopped.
+2023-05-28 17:21:29.836 +02:00 [DBG] Connection id "0HMQVHSR3MO4R" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-05-28 17:21:29.836 +02:00 [DBG] Connection id "0HMQVHSR3MO4S" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-05-28 17:21:29.988 +02:00 [DBG] Connection id "0HMQVHSR3MO4T" accepted.
+2023-05-28 17:21:29.990 +02:00 [DBG] Connection id "0HMQVHSR3MO4T" started.
+2023-05-28 17:21:30.015 +02:00 [DBG] Connection 0HMQVHSR3MO4T established using the following protocol: "Tls12"
+2023-05-28 17:21:30.045 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7201/swagger/index.html - -
+2023-05-28 17:21:30.061 +02:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2023-05-28 17:21:30.176 +02:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2023-05-28 17:21:30.313 +02:00 [DBG] Response markup was updated to include browser refresh script injection.
+2023-05-28 17:21:30.316 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7201/_framework/aspnetcore-browser-refresh.js - -
+2023-05-28 17:21:30.317 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7201/swagger/index.html - - - 200 - text/html;charset=utf-8 274.6445ms
+2023-05-28 17:21:30.319 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7201/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 2.8614ms
+2023-05-28 17:21:30.341 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7201/_vs/browserLink - -
+2023-05-28 17:21:30.399 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7201/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 57.8491ms
+2023-05-28 17:21:30.881 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7201/swagger/v1/swagger.json - -
+2023-05-28 17:21:31.069 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7201/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 188.6814ms
+2023-05-28 17:23:42.470 +02:00 [DBG] Connection id "0HMQVHSR3MO4T" is closing.
+2023-05-28 17:23:42.474 +02:00 [DBG] Connection id "0HMQVHSR3MO4T" is closed. The last processed stream ID was 7.
+2023-05-28 17:23:42.475 +02:00 [DBG] Connection id "0HMQVHSR3MO4T" received FIN.
+2023-05-28 17:23:42.476 +02:00 [DBG] Connection id "0HMQVHSR3MO4T" stopped.
+2023-05-28 17:23:42.476 +02:00 [DBG] Connection id "0HMQVHSR3MO4T" sending FIN because: "The Socket transport's send loop completed gracefully."
