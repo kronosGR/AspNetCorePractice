@@ -609,3 +609,11 @@ System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport
 2023-05-28 12:18:08.440 +02:00 [INF] Executed endpoint 'CityInfo.API.Controllers.CitiesController.GetCities (CityInfo.API)'
 2023-05-28 12:18:08.440 +02:00 [DBG] Connection id "0HMQVCF8PQ90V" completed keep alive response.
 2023-05-28 12:18:08.441 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7201/api/cities - - - 200 1060 application/json;+charset=utf-8 17.3459ms
+2023-05-28 12:20:16.525 +02:00 [DBG] Connection id "0HMQVCF8PQ90T" is closing.
+2023-05-28 12:20:16.526 +02:00 [DBG] Connection id "0HMQVCF8PQ90T" is closed. The last processed stream ID was 7.
+2023-05-28 12:20:16.528 +02:00 [DBG] Connection id "0HMQVCF8PQ90T" received FIN.
+2023-05-28 12:20:16.528 +02:00 [DBG] Connection id "0HMQVCF8PQ90T" stopped.
+2023-05-28 12:20:16.529 +02:00 [DBG] Connection id "0HMQVCF8PQ90T" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-05-28 12:20:18.548 +02:00 [DBG] Connection id "0HMQVCF8PQ90V" disconnecting.
+2023-05-28 12:20:18.549 +02:00 [DBG] Connection id "0HMQVCF8PQ90V" stopped.
+2023-05-28 12:20:18.549 +02:00 [DBG] Connection id "0HMQVCF8PQ90V" sending FIN because: "The Socket transport's send loop completed gracefully."
