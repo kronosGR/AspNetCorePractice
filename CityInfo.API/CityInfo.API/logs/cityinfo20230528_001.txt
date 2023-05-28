@@ -1,0 +1,165 @@
+2023-05-28 17:02:40.822 +02:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2023-05-28 17:02:40.880 +02:00 [DBG] Hosting starting
+2023-05-28 17:02:40.929 +02:00 [DBG] Using development certificate: CN=localhost (Thumbprint: 69863A6EC5CC95D6314E21D4124A0A1C6A5B28D4)
+2023-05-28 17:02:40.947 +02:00 [INF] Now listening on: https://localhost:7201
+2023-05-28 17:02:40.947 +02:00 [INF] Now listening on: http://localhost:5078
+2023-05-28 17:02:40.948 +02:00 [DBG] Loaded hosting startup assembly CityInfo.API
+2023-05-28 17:02:40.948 +02:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2023-05-28 17:02:40.949 +02:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2023-05-28 17:02:40.950 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-28 17:02:40.950 +02:00 [INF] Hosting environment: Development
+2023-05-28 17:02:40.951 +02:00 [INF] Content root path: E:\NextCloud\1. important\DEV\asp.net\AspNetCorePractice\CityInfo.API\CityInfo.API\
+2023-05-28 17:02:40.952 +02:00 [DBG] Hosting started
+2023-05-28 17:02:41.187 +02:00 [DBG] Connection id "0HMQVHIAOGJVL" accepted.
+2023-05-28 17:02:41.188 +02:00 [DBG] Connection id "0HMQVHIAOGJVL" started.
+2023-05-28 17:02:41.196 +02:00 [DBG] Connection id "0HMQVHIAOGJVM" accepted.
+2023-05-28 17:02:41.197 +02:00 [DBG] Connection id "0HMQVHIAOGJVM" started.
+2023-05-28 17:02:41.230 +02:00 [DBG] Connection id "0HMQVHIAOGJVL" received FIN.
+2023-05-28 17:02:41.230 +02:00 [DBG] Connection id "0HMQVHIAOGJVM" received FIN.
+2023-05-28 17:02:41.235 +02:00 [DBG] Connection id "0HMQVHIAOGJVN" accepted.
+2023-05-28 17:02:41.236 +02:00 [DBG] Connection id "0HMQVHIAOGJVN" started.
+2023-05-28 17:02:41.236 +02:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|189_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
+   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2023-05-28 17:02:41.236 +02:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|189_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
+   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2023-05-28 17:02:41.253 +02:00 [DBG] Connection id "0HMQVHIAOGJVL" stopped.
+2023-05-28 17:02:41.254 +02:00 [DBG] Connection id "0HMQVHIAOGJVM" stopped.
+2023-05-28 17:02:41.255 +02:00 [DBG] Connection id "0HMQVHIAOGJVL" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-05-28 17:02:41.256 +02:00 [DBG] Connection id "0HMQVHIAOGJVM" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-05-28 17:02:41.260 +02:00 [DBG] Connection 0HMQVHIAOGJVN established using the following protocol: "Tls12"
+2023-05-28 17:02:41.291 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7201/swagger/index.html - -
+2023-05-28 17:02:41.306 +02:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2023-05-28 17:02:41.431 +02:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2023-05-28 17:02:41.485 +02:00 [DBG] Response markup was updated to include browser refresh script injection.
+2023-05-28 17:02:41.488 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7201/swagger/index.html - - - 200 - text/html;charset=utf-8 199.4100ms
+2023-05-28 17:02:41.507 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7201/_framework/aspnetcore-browser-refresh.js - -
+2023-05-28 17:02:41.510 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7201/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 2.5520ms
+2023-05-28 17:02:41.511 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7201/_vs/browserLink - -
+2023-05-28 17:02:41.521 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7201/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 10.2683ms
+2023-05-28 17:02:42.084 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7201/swagger/v1/swagger.json - -
+2023-05-28 17:02:42.257 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7201/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 173.3866ms
+2023-05-28 17:03:36.844 +02:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2023-05-28 17:03:37.296 +02:00 [INF] Entity Framework Core 6.0.0 initialized 'CityInfoContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-05-28 17:03:37.332 +02:00 [DBG] Migrating using database 'main' on server 'CityInfo.db'.
+2023-05-28 17:03:37.336 +02:00 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2023-05-28 17:03:37.344 +02:00 [DBG] An error occurred using the connection to database 'main' on server 'CityInfo.db'.
+2023-05-28 17:03:37.345 +02:00 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2023-05-28 17:03:37.345 +02:00 [DBG] An error occurred using the connection to database 'main' on server 'CityInfo.db'.
+2023-05-28 17:03:37.345 +02:00 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2023-05-28 17:03:37.350 +02:00 [DBG] Opened connection to database 'main' on server 'E:\NextCloud\1. important\DEV\asp.net\AspNetCorePractice\CityInfo.API\CityInfo.API\CityInfo.db'.
+2023-05-28 17:03:37.358 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-05-28 17:03:37.363 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (5ms).
+2023-05-28 17:03:37.369 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+PRAGMA journal_mode = 'wal';
+2023-05-28 17:03:37.386 +02:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+PRAGMA journal_mode = 'wal';
+2023-05-28 17:03:37.387 +02:00 [DBG] Closing connection to database 'main' on server 'E:\NextCloud\1. important\DEV\asp.net\AspNetCorePractice\CityInfo.API\CityInfo.API\CityInfo.db'.
+2023-05-28 17:03:37.389 +02:00 [DBG] Closed connection to database 'main' on server 'CityInfo.db'.
+2023-05-28 17:03:37.442 +02:00 [DBG] DetectChanges starting for 'CityInfoContext'.
+2023-05-28 17:03:37.444 +02:00 [DBG] DetectChanges completed for 'CityInfoContext'.
+2023-05-28 17:03:37.461 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-05-28 17:03:37.462 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2023-05-28 17:03:37.462 +02:00 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2023-05-28 17:03:37.462 +02:00 [DBG] Opened connection to database 'main' on server 'E:\NextCloud\1. important\DEV\asp.net\AspNetCorePractice\CityInfo.API\CityInfo.API\CityInfo.db'.
+2023-05-28 17:03:37.462 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "__EFMigrationsHistory" (
+    "MigrationId" TEXT NOT NULL CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY,
+    "ProductVersion" TEXT NOT NULL
+);
+2023-05-28 17:03:37.466 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "__EFMigrationsHistory" (
+    "MigrationId" TEXT NOT NULL CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY,
+    "ProductVersion" TEXT NOT NULL
+);
+2023-05-28 17:03:37.466 +02:00 [DBG] Closing connection to database 'main' on server 'E:\NextCloud\1. important\DEV\asp.net\AspNetCorePractice\CityInfo.API\CityInfo.API\CityInfo.db'.
+2023-05-28 17:03:37.466 +02:00 [DBG] Closed connection to database 'main' on server 'CityInfo.db'.
+2023-05-28 17:03:37.467 +02:00 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2023-05-28 17:03:37.468 +02:00 [DBG] Opened connection to database 'main' on server 'E:\NextCloud\1. important\DEV\asp.net\AspNetCorePractice\CityInfo.API\CityInfo.API\CityInfo.db'.
+2023-05-28 17:03:37.473 +02:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2023-05-28 17:03:37.473 +02:00 [DBG] Created DbCommand for 'ExecuteScalar' (0ms).
+2023-05-28 17:03:37.473 +02:00 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2023-05-28 17:03:37.473 +02:00 [DBG] Opened connection to database 'main' on server 'E:\NextCloud\1. important\DEV\asp.net\AspNetCorePractice\CityInfo.API\CityInfo.API\CityInfo.db'.
+2023-05-28 17:03:37.473 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-05-28 17:03:37.475 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-05-28 17:03:37.475 +02:00 [DBG] Closing connection to database 'main' on server 'E:\NextCloud\1. important\DEV\asp.net\AspNetCorePractice\CityInfo.API\CityInfo.API\CityInfo.db'.
+2023-05-28 17:03:37.475 +02:00 [DBG] Closed connection to database 'main' on server 'CityInfo.db'.
+2023-05-28 17:03:37.475 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-05-28 17:03:37.476 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2023-05-28 17:03:37.476 +02:00 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2023-05-28 17:03:37.476 +02:00 [DBG] Opened connection to database 'main' on server 'E:\NextCloud\1. important\DEV\asp.net\AspNetCorePractice\CityInfo.API\CityInfo.API\CityInfo.db'.
+2023-05-28 17:03:37.476 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-05-28 17:03:37.476 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-05-28 17:03:37.477 +02:00 [DBG] A data reader was disposed.
+2023-05-28 17:03:37.477 +02:00 [DBG] Closing connection to database 'main' on server 'E:\NextCloud\1. important\DEV\asp.net\AspNetCorePractice\CityInfo.API\CityInfo.API\CityInfo.db'.
+2023-05-28 17:03:37.477 +02:00 [DBG] Closed connection to database 'main' on server 'CityInfo.db'.
+2023-05-28 17:03:37.485 +02:00 [INF] Applying migration '20230528150241_CiteInfoDBInitialMigration'.
+2023-05-28 17:03:37.503 +02:00 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2023-05-28 17:03:37.503 +02:00 [DBG] Opened connection to database 'main' on server 'E:\NextCloud\1. important\DEV\asp.net\AspNetCorePractice\CityInfo.API\CityInfo.API\CityInfo.db'.
+2023-05-28 17:03:37.696 +02:00 [DBG] Beginning transaction with isolation level 'Unspecified'.
+2023-05-28 17:03:37.698 +02:00 [DBG] Began transaction with isolation level 'Serializable'.
+2023-05-28 17:03:37.698 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-05-28 17:03:37.698 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2023-05-28 17:03:37.698 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Cities" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Cities" PRIMARY KEY AUTOINCREMENT,
+    "Name" TEXT NOT NULL,
+    "Description" TEXT NULL
+);
+2023-05-28 17:03:37.699 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Cities" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Cities" PRIMARY KEY AUTOINCREMENT,
+    "Name" TEXT NOT NULL,
+    "Description" TEXT NULL
+);
+2023-05-28 17:03:37.699 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-05-28 17:03:37.699 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2023-05-28 17:03:37.699 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "PointOfInterests" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_PointOfInterests" PRIMARY KEY AUTOINCREMENT,
+    "Name" TEXT NOT NULL,
+    "CityId" INTEGER NOT NULL,
+    CONSTRAINT "FK_PointOfInterests_Cities_CityId" FOREIGN KEY ("CityId") REFERENCES "Cities" ("Id") ON DELETE CASCADE
+);
+2023-05-28 17:03:37.699 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "PointOfInterests" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_PointOfInterests" PRIMARY KEY AUTOINCREMENT,
+    "Name" TEXT NOT NULL,
+    "CityId" INTEGER NOT NULL,
+    CONSTRAINT "FK_PointOfInterests_Cities_CityId" FOREIGN KEY ("CityId") REFERENCES "Cities" ("Id") ON DELETE CASCADE
+);
+2023-05-28 17:03:37.699 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-05-28 17:03:37.699 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2023-05-28 17:03:37.699 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_PointOfInterests_CityId" ON "PointOfInterests" ("CityId");
+2023-05-28 17:03:37.699 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_PointOfInterests_CityId" ON "PointOfInterests" ("CityId");
+2023-05-28 17:03:37.699 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-05-28 17:03:37.699 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2023-05-28 17:03:37.699 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20230528150241_CiteInfoDBInitialMigration', '6.0.0');
+2023-05-28 17:03:37.699 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20230528150241_CiteInfoDBInitialMigration', '6.0.0');
+2023-05-28 17:03:37.700 +02:00 [DBG] Committing transaction.
+2023-05-28 17:03:37.702 +02:00 [DBG] Committed transaction.
+2023-05-28 17:03:37.703 +02:00 [DBG] Disposing transaction.
+2023-05-28 17:03:37.703 +02:00 [DBG] Closing connection to database 'main' on server 'E:\NextCloud\1. important\DEV\asp.net\AspNetCorePractice\CityInfo.API\CityInfo.API\CityInfo.db'.
+2023-05-28 17:03:37.703 +02:00 [DBG] Closed connection to database 'main' on server 'CityInfo.db'.
+2023-05-28 17:03:37.704 +02:00 [DBG] 'CityInfoContext' disposed.
