@@ -1,0 +1,231 @@
+2023-05-29 17:45:59.083 +02:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2023-05-29 17:45:59.540 +02:00 [INF] Entity Framework Core 6.0.0 initialized 'CityInfoContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-05-29 17:45:59.570 +02:00 [DBG] Migrating using database 'main' on server 'CityInfo.db'.
+2023-05-29 17:45:59.575 +02:00 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2023-05-29 17:45:59.583 +02:00 [DBG] Opened connection to database 'main' on server 'E:\NextCloud\1. important\DEV\asp.net\AspNetCorePractice\CityInfo.API\CityInfo.API\CityInfo.db'.
+2023-05-29 17:45:59.593 +02:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2023-05-29 17:45:59.604 +02:00 [DBG] Created DbCommand for 'ExecuteScalar' (10ms).
+2023-05-29 17:45:59.606 +02:00 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2023-05-29 17:45:59.607 +02:00 [DBG] Opened connection to database 'main' on server 'E:\NextCloud\1. important\DEV\asp.net\AspNetCorePractice\CityInfo.API\CityInfo.API\CityInfo.db'.
+2023-05-29 17:45:59.612 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-05-29 17:45:59.623 +02:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-05-29 17:45:59.625 +02:00 [DBG] Closing connection to database 'main' on server 'E:\NextCloud\1. important\DEV\asp.net\AspNetCorePractice\CityInfo.API\CityInfo.API\CityInfo.db'.
+2023-05-29 17:45:59.627 +02:00 [DBG] Closed connection to database 'main' on server 'CityInfo.db'.
+2023-05-29 17:45:59.627 +02:00 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2023-05-29 17:45:59.627 +02:00 [DBG] Opened connection to database 'main' on server 'E:\NextCloud\1. important\DEV\asp.net\AspNetCorePractice\CityInfo.API\CityInfo.API\CityInfo.db'.
+2023-05-29 17:45:59.681 +02:00 [DBG] DetectChanges starting for 'CityInfoContext'.
+2023-05-29 17:45:59.683 +02:00 [DBG] DetectChanges completed for 'CityInfoContext'.
+2023-05-29 17:45:59.700 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-05-29 17:45:59.700 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2023-05-29 17:45:59.701 +02:00 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2023-05-29 17:45:59.701 +02:00 [DBG] Opened connection to database 'main' on server 'E:\NextCloud\1. important\DEV\asp.net\AspNetCorePractice\CityInfo.API\CityInfo.API\CityInfo.db'.
+2023-05-29 17:45:59.701 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "__EFMigrationsHistory" (
+    "MigrationId" TEXT NOT NULL CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY,
+    "ProductVersion" TEXT NOT NULL
+);
+2023-05-29 17:45:59.706 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "__EFMigrationsHistory" (
+    "MigrationId" TEXT NOT NULL CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY,
+    "ProductVersion" TEXT NOT NULL
+);
+2023-05-29 17:45:59.706 +02:00 [DBG] Closing connection to database 'main' on server 'E:\NextCloud\1. important\DEV\asp.net\AspNetCorePractice\CityInfo.API\CityInfo.API\CityInfo.db'.
+2023-05-29 17:45:59.706 +02:00 [DBG] Closed connection to database 'main' on server 'CityInfo.db'.
+2023-05-29 17:45:59.707 +02:00 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2023-05-29 17:45:59.707 +02:00 [DBG] Opened connection to database 'main' on server 'E:\NextCloud\1. important\DEV\asp.net\AspNetCorePractice\CityInfo.API\CityInfo.API\CityInfo.db'.
+2023-05-29 17:45:59.707 +02:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2023-05-29 17:45:59.707 +02:00 [DBG] Created DbCommand for 'ExecuteScalar' (0ms).
+2023-05-29 17:45:59.707 +02:00 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2023-05-29 17:45:59.707 +02:00 [DBG] Opened connection to database 'main' on server 'E:\NextCloud\1. important\DEV\asp.net\AspNetCorePractice\CityInfo.API\CityInfo.API\CityInfo.db'.
+2023-05-29 17:45:59.707 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-05-29 17:45:59.708 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-05-29 17:45:59.708 +02:00 [DBG] Closing connection to database 'main' on server 'E:\NextCloud\1. important\DEV\asp.net\AspNetCorePractice\CityInfo.API\CityInfo.API\CityInfo.db'.
+2023-05-29 17:45:59.708 +02:00 [DBG] Closed connection to database 'main' on server 'CityInfo.db'.
+2023-05-29 17:45:59.708 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-05-29 17:45:59.708 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2023-05-29 17:45:59.709 +02:00 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2023-05-29 17:45:59.709 +02:00 [DBG] Opened connection to database 'main' on server 'E:\NextCloud\1. important\DEV\asp.net\AspNetCorePractice\CityInfo.API\CityInfo.API\CityInfo.db'.
+2023-05-29 17:45:59.709 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-05-29 17:45:59.709 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-05-29 17:45:59.710 +02:00 [DBG] A data reader was disposed.
+2023-05-29 17:45:59.710 +02:00 [DBG] Closing connection to database 'main' on server 'E:\NextCloud\1. important\DEV\asp.net\AspNetCorePractice\CityInfo.API\CityInfo.API\CityInfo.db'.
+2023-05-29 17:45:59.710 +02:00 [DBG] Closed connection to database 'main' on server 'CityInfo.db'.
+2023-05-29 17:45:59.717 +02:00 [INF] Applying migration '20230528150241_CiteInfoDBInitialMigration'.
+2023-05-29 17:45:59.732 +02:00 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2023-05-29 17:45:59.732 +02:00 [DBG] Opened connection to database 'main' on server 'E:\NextCloud\1. important\DEV\asp.net\AspNetCorePractice\CityInfo.API\CityInfo.API\CityInfo.db'.
+2023-05-29 17:45:59.733 +02:00 [DBG] Beginning transaction with isolation level 'Unspecified'.
+2023-05-29 17:45:59.735 +02:00 [DBG] Began transaction with isolation level 'Serializable'.
+2023-05-29 17:45:59.735 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-05-29 17:45:59.735 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2023-05-29 17:45:59.735 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Cities" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Cities" PRIMARY KEY AUTOINCREMENT,
+    "Name" TEXT NOT NULL,
+    "Description" TEXT NULL
+);
+2023-05-29 17:46:00.047 +02:00 [INF] Executed DbCommand (312ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Cities" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Cities" PRIMARY KEY AUTOINCREMENT,
+    "Name" TEXT NOT NULL,
+    "Description" TEXT NULL
+);
+2023-05-29 17:46:00.048 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-05-29 17:46:00.048 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2023-05-29 17:46:00.048 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "PointOfInterests" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_PointOfInterests" PRIMARY KEY AUTOINCREMENT,
+    "Name" TEXT NOT NULL,
+    "CityId" INTEGER NOT NULL,
+    CONSTRAINT "FK_PointOfInterests_Cities_CityId" FOREIGN KEY ("CityId") REFERENCES "Cities" ("Id") ON DELETE CASCADE
+);
+2023-05-29 17:46:00.048 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "PointOfInterests" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_PointOfInterests" PRIMARY KEY AUTOINCREMENT,
+    "Name" TEXT NOT NULL,
+    "CityId" INTEGER NOT NULL,
+    CONSTRAINT "FK_PointOfInterests_Cities_CityId" FOREIGN KEY ("CityId") REFERENCES "Cities" ("Id") ON DELETE CASCADE
+);
+2023-05-29 17:46:00.048 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-05-29 17:46:00.048 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2023-05-29 17:46:00.048 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_PointOfInterests_CityId" ON "PointOfInterests" ("CityId");
+2023-05-29 17:46:00.048 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_PointOfInterests_CityId" ON "PointOfInterests" ("CityId");
+2023-05-29 17:46:00.048 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-05-29 17:46:00.048 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2023-05-29 17:46:00.048 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20230528150241_CiteInfoDBInitialMigration', '6.0.0');
+2023-05-29 17:46:00.048 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20230528150241_CiteInfoDBInitialMigration', '6.0.0');
+2023-05-29 17:46:00.049 +02:00 [DBG] Committing transaction.
+2023-05-29 17:46:00.053 +02:00 [DBG] Committed transaction.
+2023-05-29 17:46:00.054 +02:00 [DBG] Disposing transaction.
+2023-05-29 17:46:00.054 +02:00 [DBG] Closing connection to database 'main' on server 'E:\NextCloud\1. important\DEV\asp.net\AspNetCorePractice\CityInfo.API\CityInfo.API\CityInfo.db'.
+2023-05-29 17:46:00.054 +02:00 [DBG] Closed connection to database 'main' on server 'CityInfo.db'.
+2023-05-29 17:46:00.054 +02:00 [INF] Applying migration '20230528150812_CityInfoDBAddDescription'.
+2023-05-29 17:46:00.057 +02:00 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2023-05-29 17:46:00.057 +02:00 [DBG] Opened connection to database 'main' on server 'E:\NextCloud\1. important\DEV\asp.net\AspNetCorePractice\CityInfo.API\CityInfo.API\CityInfo.db'.
+2023-05-29 17:46:00.057 +02:00 [DBG] Beginning transaction with isolation level 'Unspecified'.
+2023-05-29 17:46:00.057 +02:00 [DBG] Began transaction with isolation level 'Serializable'.
+2023-05-29 17:46:00.057 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-05-29 17:46:00.057 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2023-05-29 17:46:00.057 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE "PointOfInterests" ADD "Description" TEXT NOT NULL DEFAULT '';
+2023-05-29 17:46:00.058 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE "PointOfInterests" ADD "Description" TEXT NOT NULL DEFAULT '';
+2023-05-29 17:46:00.058 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-05-29 17:46:00.058 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2023-05-29 17:46:00.058 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20230528150812_CityInfoDBAddDescription', '6.0.0');
+2023-05-29 17:46:00.058 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20230528150812_CityInfoDBAddDescription', '6.0.0');
+2023-05-29 17:46:01.749 +02:00 [DBG] Committing transaction.
+2023-05-29 17:46:01.756 +02:00 [DBG] Committed transaction.
+2023-05-29 17:46:01.756 +02:00 [DBG] Disposing transaction.
+2023-05-29 17:46:01.756 +02:00 [DBG] Closing connection to database 'main' on server 'E:\NextCloud\1. important\DEV\asp.net\AspNetCorePractice\CityInfo.API\CityInfo.API\CityInfo.db'.
+2023-05-29 17:46:01.756 +02:00 [DBG] Closed connection to database 'main' on server 'CityInfo.db'.
+2023-05-29 17:46:01.756 +02:00 [INF] Applying migration '20230528151220_DataSeed'.
+2023-05-29 17:46:01.765 +02:00 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2023-05-29 17:46:01.765 +02:00 [DBG] Opened connection to database 'main' on server 'E:\NextCloud\1. important\DEV\asp.net\AspNetCorePractice\CityInfo.API\CityInfo.API\CityInfo.db'.
+2023-05-29 17:46:01.765 +02:00 [DBG] Beginning transaction with isolation level 'Unspecified'.
+2023-05-29 17:46:01.766 +02:00 [DBG] Began transaction with isolation level 'Serializable'.
+2023-05-29 17:46:01.766 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-05-29 17:46:01.766 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2023-05-29 17:46:01.766 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Cities" ("Id", "Description", "Name")
+VALUES (1, 'The one with that big park.', 'New York City');
+2023-05-29 17:46:01.766 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Cities" ("Id", "Description", "Name")
+VALUES (1, 'The one with that big park.', 'New York City');
+2023-05-29 17:46:01.766 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-05-29 17:46:01.766 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2023-05-29 17:46:01.766 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Cities" ("Id", "Description", "Name")
+VALUES (2, 'The one with the cathedral that was never really finished.', 'Antwerp');
+2023-05-29 17:46:01.766 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Cities" ("Id", "Description", "Name")
+VALUES (2, 'The one with the cathedral that was never really finished.', 'Antwerp');
+2023-05-29 17:46:01.766 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-05-29 17:46:01.766 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2023-05-29 17:46:01.766 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Cities" ("Id", "Description", "Name")
+VALUES (3, 'The one with that big tower.', 'Paris');
+2023-05-29 17:46:01.766 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Cities" ("Id", "Description", "Name")
+VALUES (3, 'The one with that big tower.', 'Paris');
+2023-05-29 17:46:01.767 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-05-29 17:46:01.767 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2023-05-29 17:46:01.767 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "PointOfInterests" ("Id", "CityId", "Description", "Name")
+VALUES (1, 1, 'The most visited urban park in the United States.', 'Central Park');
+2023-05-29 17:46:01.767 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "PointOfInterests" ("Id", "CityId", "Description", "Name")
+VALUES (1, 1, 'The most visited urban park in the United States.', 'Central Park');
+2023-05-29 17:46:01.767 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-05-29 17:46:01.767 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2023-05-29 17:46:01.767 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "PointOfInterests" ("Id", "CityId", "Description", "Name")
+VALUES (2, 1, 'A 102-story skyscraper located in Midtown Manhattan.', 'Empire State Building');
+2023-05-29 17:46:01.767 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "PointOfInterests" ("Id", "CityId", "Description", "Name")
+VALUES (2, 1, 'A 102-story skyscraper located in Midtown Manhattan.', 'Empire State Building');
+2023-05-29 17:46:01.767 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-05-29 17:46:01.767 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2023-05-29 17:46:01.767 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "PointOfInterests" ("Id", "CityId", "Description", "Name")
+VALUES (3, 2, 'A Gothic style cathedral, conceived by architects Jan and Pieter Appelmans.', 'Cathedral');
+2023-05-29 17:46:03.361 +02:00 [INF] Executed DbCommand (1,594ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "PointOfInterests" ("Id", "CityId", "Description", "Name")
+VALUES (3, 2, 'A Gothic style cathedral, conceived by architects Jan and Pieter Appelmans.', 'Cathedral');
+2023-05-29 17:46:03.361 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-05-29 17:46:03.361 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2023-05-29 17:46:03.361 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "PointOfInterests" ("Id", "CityId", "Description", "Name")
+VALUES (4, 2, 'The the finest example of railway architecture in Belgium.', 'Antwerp Central Station');
+2023-05-29 17:46:03.361 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "PointOfInterests" ("Id", "CityId", "Description", "Name")
+VALUES (4, 2, 'The the finest example of railway architecture in Belgium.', 'Antwerp Central Station');
+2023-05-29 17:46:03.361 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-05-29 17:46:03.361 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2023-05-29 17:46:03.361 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "PointOfInterests" ("Id", "CityId", "Description", "Name")
+VALUES (5, 3, 'A wrought iron lattice tower on the Champ de Mars, named after engineer Gustave Eiffel.', 'Eiffel Tower');
+2023-05-29 17:46:03.361 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "PointOfInterests" ("Id", "CityId", "Description", "Name")
+VALUES (5, 3, 'A wrought iron lattice tower on the Champ de Mars, named after engineer Gustave Eiffel.', 'Eiffel Tower');
+2023-05-29 17:46:03.361 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-05-29 17:46:03.361 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2023-05-29 17:46:03.361 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "PointOfInterests" ("Id", "CityId", "Description", "Name")
+VALUES (6, 3, 'The world''s largest museum.', 'The Louvre');
+2023-05-29 17:46:03.361 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "PointOfInterests" ("Id", "CityId", "Description", "Name")
+VALUES (6, 3, 'The world''s largest museum.', 'The Louvre');
+2023-05-29 17:46:03.361 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-05-29 17:46:03.361 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2023-05-29 17:46:03.361 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20230528151220_DataSeed', '6.0.0');
+2023-05-29 17:46:03.361 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20230528151220_DataSeed', '6.0.0');
+2023-05-29 17:46:03.361 +02:00 [DBG] Committing transaction.
+2023-05-29 17:46:03.369 +02:00 [DBG] Committed transaction.
+2023-05-29 17:46:03.369 +02:00 [DBG] Disposing transaction.
+2023-05-29 17:46:03.369 +02:00 [DBG] Closing connection to database 'main' on server 'E:\NextCloud\1. important\DEV\asp.net\AspNetCorePractice\CityInfo.API\CityInfo.API\CityInfo.db'.
+2023-05-29 17:46:03.369 +02:00 [DBG] Closed connection to database 'main' on server 'CityInfo.db'.
+2023-05-29 17:46:03.370 +02:00 [DBG] 'CityInfoContext' disposed.
