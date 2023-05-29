@@ -1502,3 +1502,11 @@ SELECT EXISTS (
 2023-05-28 18:22:44.154 +02:00 [DBG] Connection id "0HMQVIUO7NODV" completed keep alive response.
 2023-05-28 18:22:44.155 +02:00 [DBG] 'CityInfoContext' disposed.
 2023-05-28 18:22:44.156 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7201/api/cities/4/pointsofinterest/1 - - - 404 161 application/problem+json;+charset=utf-8 39.6830ms
+2023-05-28 18:24:23.740 +02:00 [DBG] Connection id "0HMQVIUO7NODT" is closing.
+2023-05-28 18:24:23.741 +02:00 [DBG] Connection id "0HMQVIUO7NODT" is closed. The last processed stream ID was 7.
+2023-05-28 18:24:23.743 +02:00 [DBG] Connection id "0HMQVIUO7NODT" received FIN.
+2023-05-28 18:24:23.743 +02:00 [DBG] Connection id "0HMQVIUO7NODT" sending FIN because: "The client closed the connection."
+2023-05-28 18:24:23.755 +02:00 [DBG] Connection id "0HMQVIUO7NODT" stopped.
+2023-05-28 18:24:55.041 +02:00 [DBG] Connection id "0HMQVIUO7NODV" disconnecting.
+2023-05-28 18:24:55.042 +02:00 [DBG] Connection id "0HMQVIUO7NODV" stopped.
+2023-05-28 18:24:55.042 +02:00 [DBG] Connection id "0HMQVIUO7NODV" sending FIN because: "The Socket transport's send loop completed gracefully."

@@ -13,6 +13,15 @@ namespace CityInfo.API.Services
             this._context = context;
         }
 
+        public async Task AddPointOfInterestForCityAsync(int cityId, PointOfInterest pointOfInterest)
+        {
+            var city = await GetCityAsync(cityId, false);
+            if (city != null)
+            {
+                city.PointsOfInterest.Add(pointOfInterest);
+            }
+        }
+
         public async Task<bool> CityExistsAsync(int cityId)
         {
             return await _context.Cities.AnyAsync(c => c.Id == cityId);
@@ -43,6 +52,11 @@ namespace CityInfo.API.Services
         public async Task<IEnumerable<PointOfInterest>> GetPointsOfInterestsForCityAsync(int cityId)
         {
             return await _context.PointOfInterests.Where(p => p.CityId == cityId).ToListAsync();
+        }
+
+        public async Task<bool> SaveChangesAsync()
+        {
+            return await _context.SaveChangesAsync() >= 0;
         }
     }
 }
