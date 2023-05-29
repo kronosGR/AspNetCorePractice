@@ -6,6 +6,7 @@ namespace CityInfo.API.Services
     {
         Task<bool> CityExistsAsync(int cityId);
         Task<IEnumerable<City>> GetCitiesAsync();
+        Task<IEnumerable<City>> GetCitiesAsync(string? name);
 
         Task<City?> GetCityAsync(int cityId, bool includePointsOfInterest);
 
