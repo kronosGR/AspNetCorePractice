@@ -105,3 +105,75 @@ System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport
 2023-05-30 10:09:37.136 +02:00 [DBG] Connection id "0HMR0SJIH4I3D" disconnecting.
 2023-05-30 10:09:37.136 +02:00 [DBG] Connection id "0HMR0SJIH4I3D" stopped.
 2023-05-30 10:09:37.137 +02:00 [DBG] Connection id "0HMR0SJIH4I3D" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-05-30 10:30:39.387 +02:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2023-05-30 10:30:39.441 +02:00 [DBG] Hosting starting
+2023-05-30 10:30:39.450 +02:00 [INF] User profile is available. Using 'C:\Users\geoel\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-05-30 10:30:39.455 +02:00 [DBG] Repository contains no viable default key. Caller should generate a key with immediate activation.
+2023-05-30 10:30:39.456 +02:00 [DBG] Policy resolution states that a new key should be added to the key ring.
+2023-05-30 10:30:39.460 +02:00 [INF] Creating key {72dbd5e5-7f33-439e-b9e9-807bfb60f538} with creation date 2023-05-30 08:30:39Z, activation date 2023-05-30 08:30:39Z, and expiration date 2023-08-28 08:30:39Z.
+2023-05-30 10:30:39.465 +02:00 [DBG] Descriptor deserializer type for key {72dbd5e5-7f33-439e-b9e9-807bfb60f538} is 'Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'.
+2023-05-30 10:30:39.469 +02:00 [DBG] No key escrow sink found. Not writing key {72dbd5e5-7f33-439e-b9e9-807bfb60f538} to escrow.
+2023-05-30 10:30:39.472 +02:00 [DBG] Encrypting to Windows DPAPI for current user account (DESKTOP-I5L2U8P\geoel).
+2023-05-30 10:30:39.476 +02:00 [INF] Writing data to file 'C:\Users\geoel\AppData\Local\ASP.NET\DataProtection-Keys\key-72dbd5e5-7f33-439e-b9e9-807bfb60f538.xml'.
+2023-05-30 10:30:39.477 +02:00 [DBG] Key cache expiration token triggered by 'CreateNewKey' operation.
+2023-05-30 10:30:39.478 +02:00 [DBG] Reading data from file 'C:\Users\geoel\AppData\Local\ASP.NET\DataProtection-Keys\key-72dbd5e5-7f33-439e-b9e9-807bfb60f538.xml'.
+2023-05-30 10:30:39.489 +02:00 [DBG] Found key {72dbd5e5-7f33-439e-b9e9-807bfb60f538}.
+2023-05-30 10:30:39.493 +02:00 [DBG] Considering key {72dbd5e5-7f33-439e-b9e9-807bfb60f538} with expiration date 2023-08-28 08:30:39Z as default key.
+2023-05-30 10:30:39.495 +02:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2023-05-30 10:30:39.496 +02:00 [DBG] Decrypting secret element using Windows DPAPI.
+2023-05-30 10:30:39.497 +02:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2023-05-30 10:30:39.501 +02:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2023-05-30 10:30:39.503 +02:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2023-05-30 10:30:39.505 +02:00 [DBG] Using key {72dbd5e5-7f33-439e-b9e9-807bfb60f538} as the default key.
+2023-05-30 10:30:39.505 +02:00 [DBG] Key ring with default key {72dbd5e5-7f33-439e-b9e9-807bfb60f538} was loaded during application startup.
+2023-05-30 10:30:39.551 +02:00 [DBG] Using development certificate: CN=localhost (Thumbprint: 69863A6EC5CC95D6314E21D4124A0A1C6A5B28D4)
+2023-05-30 10:30:39.569 +02:00 [INF] Now listening on: https://localhost:7201
+2023-05-30 10:30:39.569 +02:00 [INF] Now listening on: http://localhost:5078
+2023-05-30 10:30:39.570 +02:00 [DBG] Loaded hosting startup assembly CityInfo.API
+2023-05-30 10:30:39.571 +02:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2023-05-30 10:30:39.572 +02:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2023-05-30 10:30:39.573 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-30 10:30:39.573 +02:00 [INF] Hosting environment: Development
+2023-05-30 10:30:39.574 +02:00 [INF] Content root path: E:\NextCloud\1. important\DEV\asp.net\AspNetCorePractice\CityInfo.API\CityInfo.API\
+2023-05-30 10:30:39.575 +02:00 [DBG] Hosting started
+2023-05-30 10:30:39.773 +02:00 [DBG] Connection id "0HMR0T0J81URN" accepted.
+2023-05-30 10:30:39.773 +02:00 [DBG] Connection id "0HMR0T0J81URO" accepted.
+2023-05-30 10:30:39.774 +02:00 [DBG] Connection id "0HMR0T0J81URN" started.
+2023-05-30 10:30:39.775 +02:00 [DBG] Connection id "0HMR0T0J81URO" started.
+2023-05-30 10:30:39.789 +02:00 [DBG] Connection id "0HMR0T0J81URO" received FIN.
+2023-05-30 10:30:39.789 +02:00 [DBG] Connection id "0HMR0T0J81URN" received FIN.
+2023-05-30 10:30:39.792 +02:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|189_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
+   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2023-05-30 10:30:39.792 +02:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|189_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
+   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2023-05-30 10:30:39.807 +02:00 [DBG] Connection id "0HMR0T0J81URO" stopped.
+2023-05-30 10:30:39.808 +02:00 [DBG] Connection id "0HMR0T0J81URN" stopped.
+2023-05-30 10:30:39.809 +02:00 [DBG] Connection id "0HMR0T0J81URO" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-05-30 10:30:39.809 +02:00 [DBG] Connection id "0HMR0T0J81URN" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-05-30 10:30:39.864 +02:00 [DBG] Connection id "0HMR0T0J81URP" accepted.
+2023-05-30 10:30:39.864 +02:00 [DBG] Connection id "0HMR0T0J81URP" started.
+2023-05-30 10:30:39.887 +02:00 [DBG] Connection 0HMR0T0J81URP established using the following protocol: "Tls12"
+2023-05-30 10:30:39.913 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7201/swagger/index.html - -
+2023-05-30 10:30:39.929 +02:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2023-05-30 10:30:40.034 +02:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2023-05-30 10:30:40.081 +02:00 [DBG] Response markup was updated to include browser refresh script injection.
+2023-05-30 10:30:40.084 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7201/swagger/index.html - - - 200 - text/html;charset=utf-8 174.2847ms
+2023-05-30 10:30:40.104 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7201/_framework/aspnetcore-browser-refresh.js - -
+2023-05-30 10:30:40.108 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7201/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 3.8097ms
+2023-05-30 10:30:40.111 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7201/_vs/browserLink - -
+2023-05-30 10:30:40.120 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7201/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 9.0528ms
+2023-05-30 10:30:40.643 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7201/swagger/v1/swagger.json - -
+2023-05-30 10:30:40.808 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7201/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 165.2295ms
+2023-05-30 10:32:53.554 +02:00 [DBG] Connection id "0HMR0T0J81URP" is closing.
+2023-05-30 10:32:53.558 +02:00 [DBG] Connection id "0HMR0T0J81URP" is closed. The last processed stream ID was 7.
+2023-05-30 10:32:53.562 +02:00 [DBG] Connection id "0HMR0T0J81URP" received FIN.
+2023-05-30 10:32:53.562 +02:00 [DBG] Connection id "0HMR0T0J81URP" sending FIN because: "The client closed the connection."
+2023-05-30 10:32:53.570 +02:00 [DBG] Connection id "0HMR0T0J81URP" stopped.
