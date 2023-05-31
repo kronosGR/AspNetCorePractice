@@ -1,5 +1,6 @@
 using AutoMapper;
 using DishesAPI.DbContexts;
+using DishesAPI.Entities;
 using DishesAPI.Models;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
@@ -53,6 +54,18 @@ app.MapGet("/dishes/{dishId:guid}/ingredients", async (DishesDbContext disheDbCo
 app.MapGet("/dishes/{dishName}", async (DishesDbContext dishesDbContext, IMapper mapper, string dishName) =>
 {
     return mapper.Map<DishDto>(await dishesDbContext.Dishes.FirstOrDefaultAsync(d => d.Name == dishName));
+});
+
+app.MapPost("/dishes", async (DishesDbContext dishesDbContext, IMapper mapper,
+    [FromBody] DishForCreationDto dishForCreationDto) =>
+{
+
+    var dishEntity = mapper.Map<Dish>(dishForCreationDto);
+    dishesDbContext.Add(dishEntity);
+    await dishesDbContext.SaveChangesAsync();
+
+    var dishToReturn = mapper.Map<DishDto>(dishEntity);
+    return TypedResults.Ok(dishToReturn);
 });
 
 
