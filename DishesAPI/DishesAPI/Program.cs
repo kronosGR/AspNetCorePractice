@@ -1,7 +1,10 @@
 using AutoMapper;
 using DishesAPI.DbContexts;
 using DishesAPI.Models;
+using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,15 +23,25 @@ var app = builder.Build();
 app.UseHttpsRedirection();
 
 
-app.MapGet("/dishes", async (DishesDbContext dishesDbContext, IMapper mapper) =>
+app.MapGet("/dishes", async Task<Ok<IEnumerable<DishDto>>> (DishesDbContext dishesDbContext, IMapper mapper,
+    ClaimsPrincipal claimsPrincipal, [FromQueryAttribute] string? name) =>
 {
-    return mapper.Map<IEnumerable<DishDto>>(await dishesDbContext.Dishes.ToListAsync());
+    Console.WriteLine($"User authenticated? {claimsPrincipal.Identity?.IsAuthenticated}");
+
+    return TypedResults.Ok(mapper.Map<IEnumerable<DishDto>>(await dishesDbContext.Dishes
+        .Where(d => name == null || d.Name.Contains(name))
+        .ToListAsync()));
 });
 
-app.MapGet("/dishes/{dishId:guid}", async (DishesDbContext dishesDbContext, IMapper mapper, Guid dishId) =>
+app.MapGet("/dishes/{dishId:guid}", async Task<Results<NotFound, Ok<DishDto>>> (DishesDbContext dishesDbContext, IMapper mapper, Guid dishId) =>
 {
+    var dishEntity = await dishesDbContext.Dishes.FirstOrDefaultAsync(d => d.Id == dishId);
+    if (dishEntity != null)
+    {
+        return TypedResults.NotFound();
+    }
 
-    return mapper.Map<DishDto>(await dishesDbContext.Dishes.FirstOrDefaultAsync(d => d.Id == dishId));
+    return TypedResults.Ok(mapper.Map<DishDto>(dishEntity));
 });
 
 app.MapGet("/dishes/{dishId:guid}/ingredients", async (DishesDbContext disheDbContext, IMapper mapper, Guid dishId) =>
