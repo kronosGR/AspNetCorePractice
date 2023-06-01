@@ -23,8 +23,12 @@ var app = builder.Build();
 
 app.UseHttpsRedirection();
 
+var dishesEndpoints = app.MapGroup("/dishes");
+var dishWithGuidEndpoints = dishesEndpoints.MapGroup("/{dishId:guid}");
+var ingredientsEndpoints = dishWithGuidEndpoints.MapGroup("/ingredients");
 
-app.MapGet("/dishes", async Task<Ok<IEnumerable<DishDto>>> (DishesDbContext dishesDbContext, IMapper mapper,
+
+dishesEndpoints.MapGet("", async Task<Ok<IEnumerable<DishDto>>> (DishesDbContext dishesDbContext, IMapper mapper,
     ClaimsPrincipal claimsPrincipal, [FromQueryAttribute] string? name) =>
 {
     Console.WriteLine($"User authenticated? {claimsPrincipal.Identity?.IsAuthenticated}");
@@ -34,10 +38,11 @@ app.MapGet("/dishes", async Task<Ok<IEnumerable<DishDto>>> (DishesDbContext dish
         .ToListAsync()));
 });
 
-app.MapGet("/dishes/{dishId:guid}", async Task<Results<NotFound, Ok<DishDto>>> (DishesDbContext dishesDbContext, IMapper mapper, Guid dishId) =>
+dishWithGuidEndpoints.MapGet("", async Task<Results<NotFound, Ok<DishDto>>> (DishesDbContext dishesDbContext,
+    IMapper mapper, Guid dishId) =>
 {
     var dishEntity = await dishesDbContext.Dishes.FirstOrDefaultAsync(d => d.Id == dishId);
-    if (dishEntity != null)
+    if (dishEntity == null)
     {
         return TypedResults.NotFound();
     }
@@ -46,18 +51,18 @@ app.MapGet("/dishes/{dishId:guid}", async Task<Results<NotFound, Ok<DishDto>>> (
 
 }).WithName("GetDish");
 
-app.MapGet("/dishes/{dishId:guid}/ingredients", async (DishesDbContext disheDbContext, IMapper mapper, Guid dishId) =>
+ingredientsEndpoints.MapGet("", async (DishesDbContext disheDbContext, IMapper mapper, Guid dishId) =>
 {
     return mapper.Map<IEnumerable<IngredientDto>>((await disheDbContext.Dishes.Include(d => d.Ingredients)
         .FirstOrDefaultAsync(d => d.Id == dishId))?.Ingredients);
 });
 
-app.MapGet("/dishes/{dishName}", async (DishesDbContext dishesDbContext, IMapper mapper, string dishName) =>
+dishesEndpoints.MapGet("/{dishName}", async (DishesDbContext dishesDbContext, IMapper mapper, string dishName) =>
 {
     return mapper.Map<DishDto>(await dishesDbContext.Dishes.FirstOrDefaultAsync(d => d.Name == dishName));
 });
 
-app.MapPost("/dishes", async (DishesDbContext dishesDbContext, IMapper mapper,
+dishesEndpoints.MapPost("", async (DishesDbContext dishesDbContext, IMapper mapper,
     [FromBody] DishForCreationDto dishForCreationDto
     //LinkGenerator linkGenerator,
     //HttpContext httpContext
@@ -76,7 +81,7 @@ app.MapPost("/dishes", async (DishesDbContext dishesDbContext, IMapper mapper,
     return TypedResults.CreatedAtRoute(dishToReturn, "GetDish", new { dishId = dishToReturn.Id });
 });
 
-app.MapPut("/dishes/{dishId:guid}", async Task<Results<NotFound, NoContent>> (DishesDbContext dishesDbContext, IMapper mapper, Guid dishId,
+dishWithGuidEndpoints.MapPut("", async Task<Results<NotFound, NoContent>> (DishesDbContext dishesDbContext, IMapper mapper, Guid dishId,
     DishForUpdateDto dishToUpdateDto) =>
 {
     var dishEntity = await dishesDbContext.Dishes.FirstOrDefaultAsync(d => d.Id == dishId);
@@ -92,7 +97,7 @@ app.MapPut("/dishes/{dishId:guid}", async Task<Results<NotFound, NoContent>> (Di
 
 });
 
-app.MapDelete("/dishes/{dishId:guid}", async Task<Results<NoContent, NotFound>> (DishesDbContext dishesDbContext, Guid dishId) =>
+dishWithGuidEndpoints.MapDelete("", async Task<Results<NoContent, NotFound>> (DishesDbContext dishesDbContext, Guid dishId) =>
 {
     var dishEntity = await dishesDbContext.Dishes.FirstOrDefaultAsync(d => d.Id == dishId);
     if (dishEntity == null)
