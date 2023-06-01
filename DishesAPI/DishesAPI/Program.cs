@@ -43,7 +43,8 @@ app.MapGet("/dishes/{dishId:guid}", async Task<Results<NotFound, Ok<DishDto>>> (
     }
 
     return TypedResults.Ok(mapper.Map<DishDto>(dishEntity));
-});
+
+}).WithName("GetDish");
 
 app.MapGet("/dishes/{dishId:guid}/ingredients", async (DishesDbContext disheDbContext, IMapper mapper, Guid dishId) =>
 {
@@ -57,7 +58,10 @@ app.MapGet("/dishes/{dishName}", async (DishesDbContext dishesDbContext, IMapper
 });
 
 app.MapPost("/dishes", async (DishesDbContext dishesDbContext, IMapper mapper,
-    [FromBody] DishForCreationDto dishForCreationDto) =>
+    [FromBody] DishForCreationDto dishForCreationDto
+    //LinkGenerator linkGenerator,
+    //HttpContext httpContext
+    ) =>
 {
 
     var dishEntity = mapper.Map<Dish>(dishForCreationDto);
@@ -65,7 +69,11 @@ app.MapPost("/dishes", async (DishesDbContext dishesDbContext, IMapper mapper,
     await dishesDbContext.SaveChangesAsync();
 
     var dishToReturn = mapper.Map<DishDto>(dishEntity);
-    return TypedResults.Ok(dishToReturn);
+
+    //var linkToDish = linkGenerator.GetUriByName(httpContext, "GetDish", new { dishId = dishToReturn.Id });
+    //return TypedResults.Created(linkToDish, dishToReturn);
+
+    return TypedResults.CreatedAtRoute(dishToReturn, "GetDish", new { dishId = dishToReturn.Id });
 });
 
 
