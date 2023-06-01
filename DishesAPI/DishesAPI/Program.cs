@@ -76,6 +76,35 @@ app.MapPost("/dishes", async (DishesDbContext dishesDbContext, IMapper mapper,
     return TypedResults.CreatedAtRoute(dishToReturn, "GetDish", new { dishId = dishToReturn.Id });
 });
 
+app.MapPut("/dishes/{dishId:guid}", async Task<Results<NotFound, NoContent>> (DishesDbContext dishesDbContext, IMapper mapper, Guid dishId,
+    DishForUpdateDto dishToUpdateDto) =>
+{
+    var dishEntity = await dishesDbContext.Dishes.FirstOrDefaultAsync(d => d.Id == dishId);
+    if (dishEntity == null)
+    {
+        return TypedResults.NotFound();
+    }
+
+    mapper.Map(dishToUpdateDto, dishEntity);
+    await dishesDbContext.SaveChangesAsync();
+
+    return TypedResults.NoContent();
+
+});
+
+app.MapDelete("/dishes/{dishId:guid}", async Task<Results<NoContent, NotFound>> (DishesDbContext dishesDbContext, Guid dishId) =>
+{
+    var dishEntity = await dishesDbContext.Dishes.FirstOrDefaultAsync(d => d.Id == dishId);
+    if (dishEntity == null)
+    {
+        return TypedResults.NotFound();
+    }
+
+    dishesDbContext.Dishes.Remove(dishEntity);
+    await dishesDbContext.SaveChangesAsync();
+    return TypedResults.NoContent();
+});
+
 
 
 using (var serviceScope = app.Services.GetService<IServiceScopeFactory>()
