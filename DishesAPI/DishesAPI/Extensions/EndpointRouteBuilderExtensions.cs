@@ -7,13 +7,14 @@ namespace DishesAPI.Extensions
     {
         public static void RegisterDishesEndpoints(this IEndpointRouteBuilder endpointRouteBuilder)
         {
-            var dishesEndpoints = endpointRouteBuilder.MapGroup("/dishes");
+            var dishesEndpoints = endpointRouteBuilder.MapGroup("/dishes").RequireAuthorization();
             var dishWithGuidIdEndpoints = dishesEndpoints.MapGroup("/{dishId:guid}");
 
             dishesEndpoints.MapGet("", DishesHandlers.GetDishesAsync);
-            dishWithGuidIdEndpoints.MapGet("", DishesHandlers.GetDishByIdAsync)
-                .WithName("GetDish");
-            dishesEndpoints.MapGet("/{dishName}", DishesHandlers.GetDishByNameAsync);
+
+            dishWithGuidIdEndpoints.MapGet("", DishesHandlers.GetDishByIdAsync).WithName("GetDish");
+
+            dishesEndpoints.MapGet("/{dishName}", DishesHandlers.GetDishByNameAsync).AllowAnonymous();
             dishesEndpoints.MapPost("", DishesHandlers.CreateDishAsync).AddEndpointFilter<ValidateAnnotationsFilter>();
             dishWithGuidIdEndpoints.MapPut("", DishesHandlers.UpdateDishAsync).AddEndpointFilter(
                 new DishIsLockedFilter(new("wfgrewg rgid")));
@@ -22,7 +23,8 @@ namespace DishesAPI.Extensions
 
         public static void RegisterIngredientEndpoints(this IEndpointRouteBuilder endpointRouteBuilder)
         {
-            var ingredientsEndpoints = endpointRouteBuilder.MapGroup("/dishes/{dishId:guid}/ingredients");
+            var ingredientsEndpoints = endpointRouteBuilder.MapGroup("/dishes/{dishId:guid}/ingredients")
+                .RequireAuthorization();
 
             ingredientsEndpoints.MapGet("", IngredientsHandlers.GetIngredientsAsync);
         }

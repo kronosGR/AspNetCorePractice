@@ -9,6 +9,8 @@ builder.Services.AddDbContext<DishesDbContext>(o => o.UseSqlite(
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddProblemDetails();
+builder.Services.AddAuthentication().AddJwtBearer();
+builder.Services.AddAuthorization();
 
 // Add services to the container.
 
@@ -31,6 +33,9 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
+app.UseAuthentication();
 
 app.RegisterDishesEndpoints();
 app.RegisterIngredientEndpoints();
