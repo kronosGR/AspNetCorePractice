@@ -1,5 +1,6 @@
 ﻿using DishesAPI.EndpointFilters;
 using DishesAPI.EndpointHandlers;
+using DishesAPI.Models;
 
 namespace DishesAPI.Extensions
 {
@@ -12,10 +13,20 @@ namespace DishesAPI.Extensions
 
             dishesEndpoints.MapGet("", DishesHandlers.GetDishesAsync);
 
-            dishWithGuidIdEndpoints.MapGet("", DishesHandlers.GetDishByIdAsync).WithName("GetDish");
+            dishWithGuidIdEndpoints.MapGet("", DishesHandlers.GetDishByIdAsync).WithName("GetDish")
+                .WithOpenApi(o =>
+                {
+                    // for testing 
+                    o.Deprecated = true;
+                    return o;
+                })
+                .WithSummary("Get a dish by providing an Id")
+                .WithDescription("Get a dish by providing an Id longer description");
 
             dishesEndpoints.MapGet("/{dishName}", DishesHandlers.GetDishByNameAsync).AllowAnonymous();
-            dishesEndpoints.MapPost("", DishesHandlers.CreateDishAsync).AddEndpointFilter<ValidateAnnotationsFilter>();
+            dishesEndpoints.MapPost("", DishesHandlers.CreateDishAsync).AddEndpointFilter<ValidateAnnotationsFilter>()
+                .ProducesValidationProblem(400)
+                .Accepts<DishForCreationDto>("application/json");
             dishWithGuidIdEndpoints.MapPut("", DishesHandlers.UpdateDishAsync).AddEndpointFilter(
                 new DishIsLockedFilter(new("wfgrewg rgid")));
             dishWithGuidIdEndpoints.MapDelete("", DishesHandlers.DeleteDishAsync).AddEndpointFilter<LogNotFoundResponseFilter>();
