@@ -8,6 +8,7 @@ builder.Services.AddDbContext<DishesDbContext>(o => o.UseSqlite(
     builder.Configuration["ConnectionStrings:DishesDBConnectionString"]));
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddProblemDetails();
 
 // Add services to the container.
 
@@ -15,11 +16,25 @@ var app = builder.Build();
 
 
 // Configure the HTTP request pipeline.
+if (!app.Environment.IsDevelopment())
+{
+    app.UseExceptionHandler();
+    //app.UseExceptionHandler(configureApplicationBuilder =>
+    //{
+    //    configureApplicationBuilder.Run(async context =>
+    //    {
+    //        context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+    //        context.Response.ContentType = "text/html";
+    //        await context.Response.WriteAsync("An expected problem occurred");
+    //    });
+    //});
+}
 
 app.UseHttpsRedirection();
 
 app.RegisterDishesEndpoints();
 app.RegisterIngredientEndpoints();
+
 
 
 using (var serviceScope = app.Services.GetService<IServiceScopeFactory>()

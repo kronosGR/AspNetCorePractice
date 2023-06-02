@@ -1,4 +1,5 @@
-﻿using DishesAPI.EndpointHandlers;
+﻿using DishesAPI.EndpointFilters;
+using DishesAPI.EndpointHandlers;
 
 namespace DishesAPI.Extensions
 {
@@ -13,9 +14,10 @@ namespace DishesAPI.Extensions
             dishWithGuidIdEndpoints.MapGet("", DishesHandlers.GetDishByIdAsync)
                 .WithName("GetDish");
             dishesEndpoints.MapGet("/{dishName}", DishesHandlers.GetDishByNameAsync);
-            dishesEndpoints.MapPost("", DishesHandlers.CreateDishAsync);
-            dishWithGuidIdEndpoints.MapPut("", DishesHandlers.UpdateDishAsync);
-            dishWithGuidIdEndpoints.MapDelete("", DishesHandlers.DeleteDishAsync);
+            dishesEndpoints.MapPost("", DishesHandlers.CreateDishAsync).AddEndpointFilter<ValidateAnnotationsFilter>();
+            dishWithGuidIdEndpoints.MapPut("", DishesHandlers.UpdateDishAsync).AddEndpointFilter(
+                new DishIsLockedFilter(new("wfgrewg rgid")));
+            dishWithGuidIdEndpoints.MapDelete("", DishesHandlers.DeleteDishAsync).AddEndpointFilter<LogNotFoundResponseFilter>();
         }
 
         public static void RegisterIngredientEndpoints(this IEndpointRouteBuilder endpointRouteBuilder)
