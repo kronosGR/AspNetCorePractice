@@ -1,1 +1,4 @@
-public record HouseDto(int Id, string? Address, string? Country, int Price);
+using System.ComponentModel.DataAnnotations;
+
+public record HouseDto(int Id, [property: Required] string? Address,
+   [property: Required] string? Country, int Price);
