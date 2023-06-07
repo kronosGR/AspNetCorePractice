@@ -50,4 +50,4 @@ namespace FlightPlanAPI.Models
         public int NumberOnBoard { get; set; }
     }
 }
-}
+
