@@ -1,4 +1,6 @@
+using FlightPlanAPI.Authentication;
 using FlightPlanAPI.Data;
+using Microsoft.AspNetCore.Authentication;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +11,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddCors();
+builder.Services.AddAuthentication("BasicAuthentication")
+    .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
 builder.Services.AddScoped<IDatabaseAdapter, MongoDbDatabase>();
 
 var app = builder.Build();
@@ -28,6 +32,8 @@ app.UseCors(o =>
 });
 
 app.UseHttpsRedirection();
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.UseAuthorization();
 
